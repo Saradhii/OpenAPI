@@ -7,6 +7,10 @@ import RequestQuoteRoute from "./routes/RequestQuote.route.js";
 import PortsRoute from "./routes/Ports.route.js";
 import { initOpenApi, openApiInstance } from "./openapi.js";
 import { initHello } from "./hello.js";
+import {initGetSections} from "./getSections.js";
+import {initGetCountrys} from "./getCountrys.js"
+import {initGetPorts} from "./getPorts.js";
+import {initGetPortDetails} from "./getPortDetails.js";
 
 
 dotenv.config();
@@ -20,13 +24,19 @@ app.use("/api",PortsRoute);
 
 // declare our hello world api
 initHello(app, openApiInstance);
+// declare port api's
+initGetCountrys(app,openApiInstance);
+initGetPorts(app,openApiInstance);
+initGetPortDetails(app,openApiInstance)
+// declare hscode api's
+initGetSections(app,openApiInstance);
 
 // initializes schema endpoint and UI
 initOpenApi(app, openApiInstance);
 
-// app.get("/api",(req,res)=>{
-//     res.send("Intoglo backend server is running");
-// });
+app.get("/api",(req,res)=>{
+    res.send("Intoglo backend server is running");
+});
 
 const port = process.env.PORT;
 app.listen(port,async()=>{

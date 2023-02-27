@@ -5,7 +5,7 @@ export type PortType = {
     countryCode:string
 }
 
-const portSchema = new Schema<PortType>({
+export const portSchema = new Schema<PortType>({
   mainPortName: {
     type: String,
   },

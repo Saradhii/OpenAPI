@@ -15,13 +15,13 @@ export function initHello(app: Application, openApi: OpenApi) {
       // API method
       get: {
         description: "Intoglo backend server is running", // Method description
-        summary: "Demo get request to show how to declare APIs", // Method summary
+        summary: "Demo get request to know backend is running", // Method summary
         operationId: "get-hello-op", // an unique operation id
         responses: {
           // here we declare the response types
           200: textPlain("Successful Operation"),
         },
-        tags: ["Dummy Apis"], // these tags group your methods in UI
+        tags: ["hello"], // these tags group your methods in UI
       },
     },
     true // make method visible
