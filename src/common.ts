@@ -1,11 +1,5 @@
 import { Types } from "ts-openapi";
 
-export const Chapters = [
-    {
-        "chapter_no": "string",
-        "chapter_name": "string"
-    }
-]
 
 export const errorSchema = Types.Object({
   description: "Error Object",
@@ -67,3 +61,60 @@ export const portDetailSchema = Types.Object({
     },
     modelName: "Port Details",
 })
+
+export const IndianHeadingsSchema = Types.Object({
+    description: "headings in indianhs",
+    properties: {
+            
+    },
+    modelName: "Indian Headings",
+})
+
+export const subheadingsSchema = Types.Object({
+    description: "subheadings in globalhs",
+    properties: {
+            
+    },
+    modelName: "SubHeadings",
+})
+
+export const hscodeSchema = Types.Object({
+    description: "hscode",
+    properties: {
+            
+    },
+    modelName: "hscode",
+})
+
+export const countSchema = Types.Object({
+    description: "count for searching term",
+    properties: {
+            
+    },
+    modelName: "count",
+})
+
+export const AutoSuggestionsSchema = Types.Object({
+    description: "AutoSuggestions for searching term",
+    properties: {
+            
+    },
+    modelName: "AutoSuggestions",
+})
+
+export const GlobalSchema = Types.Object({
+    description: "Globaldata for searching term",
+    properties: {
+            
+    },
+    modelName: "Globaldata",
+})
+
+export const globalheadingsSchema = Types.Object({
+    description: "Global headings for given chapter",
+    properties: {
+            
+    },
+    modelName: "Global headings",
+})
+

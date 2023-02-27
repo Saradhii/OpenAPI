@@ -30,7 +30,7 @@ export function initGetSections(app: Application, openApi: OpenApi) {
               }),
             },
           },
-          tags: ["hscode"],
+          tags: ["hscode page"],
           responses: {
             200: openApi.declareSchema("Successful Operation", sectionSchema),
             400: openApi.declareSchema("Bad Request", errorSchema),

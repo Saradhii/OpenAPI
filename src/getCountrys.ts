@@ -15,7 +15,7 @@ export function initGetCountrys(app: Application, openApi: OpenApi) {
           summary: "Get country list for the port page",
           description: "This operation retrieves country list information from database",
           operationId: "get-countrys-op",
-          tags: ["Ports"],
+          tags: ["ports page"],
           responses: {
             200: openApi.declareSchema("Successful Operation", countrySchema),
             400: openApi.declareSchema("Bad Request", errorSchema),

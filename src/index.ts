@@ -5,13 +5,20 @@ import cors from "cors";
 import HSCodeRoute from "./routes/HSCode.route.js";
 import RequestQuoteRoute from "./routes/RequestQuote.route.js";
 import PortsRoute from "./routes/Ports.route.js";
-import { initOpenApi, openApiInstance } from "./openapi.js";
-import { initHello } from "./hello.js";
+import {initOpenApi, openApiInstance} from "./openapi.js";
+import {initHello} from "./hello.js";
 import {initGetSections} from "./getSections.js";
 import {initGetCountrys} from "./getCountrys.js"
 import {initGetPorts} from "./getPorts.js";
 import {initGetPortDetails} from "./getPortDetails.js";
-
+import {initGetHeadingsIndia} from "./getHeadingsIndia.js";
+import {initGetSubheadings} from "./getSubheadings.js";
+import {initGetHscode} from "./getHscode.js";
+import {initGetCount} from './getResultCount.js';
+import {initGetgetAutoSuggestions} from './getAutoSuggestions.js';
+import {initGetGlobaldata} from './getGlobaldata.js';
+import {initGetCountryHscode} from './getCountryHscode.js';
+import {initGetHeadings} from './getHeadings.js';
 
 dotenv.config();
 const app = express();
@@ -27,9 +34,18 @@ initHello(app, openApiInstance);
 // declare port api's
 initGetCountrys(app,openApiInstance);
 initGetPorts(app,openApiInstance);
-initGetPortDetails(app,openApiInstance)
+initGetPortDetails(app,openApiInstance);
 // declare hscode api's
 initGetSections(app,openApiInstance);
+initGetHeadingsIndia(app,openApiInstance);
+initGetSubheadings(app,openApiInstance);
+initGetHscode(app,openApiInstance);
+initGetCount(app,openApiInstance);
+initGetgetAutoSuggestions(app,openApiInstance);
+initGetGlobaldata(app,openApiInstance);
+initGetCountryHscode(app,openApiInstance);
+initGetHeadings(app,openApiInstance);
+
 
 // initializes schema endpoint and UI
 initOpenApi(app, openApiInstance);

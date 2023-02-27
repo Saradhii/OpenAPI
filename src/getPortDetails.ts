@@ -29,7 +29,7 @@ export function initGetPortDetails(app: Application, openApi: OpenApi) {
               })
             },
           },
-          tags: ["Ports"],
+          tags: ["ports page"],
           responses: {
             200: openApi.declareSchema("Successful Operation", portDetailSchema),
             400: openApi.declareSchema("Bad Request", errorSchema),
