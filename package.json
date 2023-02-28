@@ -9,7 +9,7 @@
     "build": "npx tsc",
     "start": "node dist/src/index.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "documentation": "npx widdershins -c — summary\"http://localhost:8000/openapi.json\" -o api.md"
+    "documentation": "widdershins -c --summary \"http://localhost:8070/openapi.json\" -o api.md"
   },
   "repository": {
     "type": "git",
