@@ -13,6 +13,9 @@ export const openApiInstance = new OpenApi(
 // declare servers for the API
 openApiInstance.setServers([{ url: `http://localhost:${process.env.PORT}` }]);
 
+// declare security schemes available, each with an ID
+
+
 // set API license
 openApiInstance.setLicense(
   "Apache License, Version 2.0", // API license name
@@ -26,6 +29,8 @@ export function initOpenApi(app: Application, openApi: OpenApi) {
 
   // we'll create an endpoint to reply with openapi schema
   app.get("/openapi.json", function (_req, res) {
+    res.setHeader("Cache-Control", "no-store, must-revalidate");
+    res.setHeader("Expires", "0");
     res.json(openApiJson);
   });
   // this will make openapi UI available with our definition
