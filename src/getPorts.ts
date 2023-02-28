@@ -2,12 +2,22 @@ import { Application, Request, Response } from "express";
 import { OpenApi, Types } from "ts-openapi";
 import { portSchema, errorSchema} from "./common.js";
 import { getPorts } from "./controllers/Port.controller.js";
+import {validationMiddleware} from "./middleware/validation.js";
 
 
 export function initGetPorts(app: Application, openApi: OpenApi) {
+  const requestSchema = {
+    params: {
+      countryName: Types.String({
+      description: "Country",
+      required: true, // param values MUST be required
+      example: "Albania",
+    }),
+  }
+  };
     // declare route to express
     app.get("/ports/:countryName", getPorts);
-  
+    validationMiddleware(requestSchema);
     // declare openAPI schema
     openApi.addPath(
       "/ports/:countryName",
