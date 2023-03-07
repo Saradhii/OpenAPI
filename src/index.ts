@@ -22,7 +22,9 @@ import {initGetHeadings} from './getHeadings.js';
 
 dotenv.config();
 const app = express();
-app.use(cors({ origin: ["http://localhost:3000","https://www.metacargo.io"] }));
+app.use(cors({
+  origin: '*'
+}));
 app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 app.use("/api",HSCodeRoute);
