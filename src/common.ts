@@ -136,6 +136,7 @@ export const IndianHeadingsSchema = Types.Object({
 export const subheadingsSchema = Types.Object({
     description: "subheadings in globalhs",
     properties: {
+      
             
     },
     modelName: "SubHeadings",
@@ -152,7 +153,22 @@ export const hscodeSchema = Types.Object({
 export const countSchema = Types.Object({
     description: "count for searching term",
     properties: {
-            
+      _index: Types.String({description:""}),
+      _id: Types.String({description:""}),
+      _score:Types.Number({description:""}),
+      _source: Types.Object({
+        properties:{
+          section_level: Types.String({description:"section_level"}),
+          section_no: Types.String({description:"section_no"}),
+          section: Types.String({description:"section"}),
+          chapter_no: Types.String({description:"chapter_no"}),
+          chapter:Types.String({description:"chapter"}),
+          heading_no:Types.String({description:"heading_no"}),
+          heading:Types.String({description:"heading"}),
+          hscode:Types.String({description:"hscode"}),
+          description:Types.String({description:"description"}),
+        }
+      })           
     },
     modelName: "count",
 })
