@@ -57,7 +57,35 @@ export const portSchema = Types.Object({
 export const portDetailSchema = Types.Object({
     description:"Port details for given port",
     properties:{
-
+      portsData: Types.Object({
+        properties:{
+          waterDepth: Types.Object({
+            properties:{
+              tidalRange: Types.String({description:"tidalRange"}),
+              entranceWidth: Types.String({description:"entranceWidth"}),
+              channelDepth: Types.String({description:"channelDepth"}),
+              anchorageDepth: Types.String({description:"anchorageDepth"}),
+              cargoPierDepth: Types.String({description:"cargoPierDepth"}),
+              oilTerminalDepth: Types.String({description:"oilTerminalDepth"}),
+              liquifiedNaturalGasTerminalDepth: Types.String({description:"liquifiedNaturalGasTerminalDepth"}),
+            }
+          }),
+          harborCharacteristics: Types.Object({
+            properties:{
+              harborSize: Types.String({description:"harborSize"}),
+              harborType: Types.String({description:"harborType"}),
+              harborUse: Types.String({description:""}),
+              goodHoldingGround: Types.String({description:""}),
+              turningArea: Types.String({description:""}),
+              shelterAfforded: Types.String({description:""}),
+              maximumVesselLength: Types.String({description:""}),
+              maximumVesselBeam: Types.String({description:""}),
+              maximumVesselDraft: Types.String({description:""}),
+              offshoreMaximumVesselLength: Types.String({description:""}),
+            }
+          })
+        }
+      })
     },
     modelName: "Port Details",
 })
