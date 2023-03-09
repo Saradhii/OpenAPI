@@ -118,7 +118,17 @@ export const portDetailSchema = Types.Object({
 export const IndianHeadingsSchema = Types.Object({
     description: "headings in indianhs",
     properties: {
-            
+      _index: Types.String({description:""}),
+      _id: Types.String({description:""}),
+      _score:Types.Number({description:""}),
+      _source: Types.Object({
+        properties:{
+            chapter: Types.String({description:""}),
+            itc_hscode: Types.String({description:""}),
+            description: Types.String({description:""}),
+            unit: Types.String({description:""}),
+        }
+      })       
     },
     modelName: "Indian Headings",
 })
