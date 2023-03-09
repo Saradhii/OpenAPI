@@ -74,16 +74,41 @@ export const portDetailSchema = Types.Object({
             properties:{
               harborSize: Types.String({description:"harborSize"}),
               harborType: Types.String({description:"harborType"}),
-              harborUse: Types.String({description:""}),
-              goodHoldingGround: Types.String({description:""}),
-              turningArea: Types.String({description:""}),
-              shelterAfforded: Types.String({description:""}),
-              maximumVesselLength: Types.String({description:""}),
-              maximumVesselBeam: Types.String({description:""}),
-              maximumVesselDraft: Types.String({description:""}),
-              offshoreMaximumVesselLength: Types.String({description:""}),
+              harborUse: Types.String({description:"harborUse"}),
+              goodHoldingGround: Types.String({description:"goodHoldingGround"}),
+              turningArea: Types.String({description:"turningArea"}),
+              shelterAfforded: Types.String({description:"shelterAfforded"}),
+              maximumVesselLength: Types.String({description:"maximumVesselLength"}),
+              maximumVesselBeam: Types.String({description:"maximumVesselBeam"}),
+              maximumVesselDraft: Types.String({description:"maximumVesselDraft"}),
+              offshoreMaximumVesselLength: Types.String({description:"offshoreMaximumVesselLength"}),
+            }
+          }),
+          entranceRestriction: Types.Object({
+            properties:{
+              tide: Types.String({description:"tide"}),
+              heavySwell: Types.String({description:"heavySwell"}),
+              ice: Types.String({description:"ice"}),
+              Other: Types.String({description:"Other"}),
+              overheadLimits: Types.String({description:"overheadLimits"}),
+            }
+          }),
+          quarantine: Types.Object({
+            properties:{
+              qratique: Types.String({description:"qratique"}),
+              sanitation: Types.String({description:"sanitation"}),
+              other: Types.String({description:"other"}),
+            }
+          }),
+          pilotage: Types.Object({
+            properties:{
+              compulsory: Types.String({description:"qratique"}),
+              available: Types.String({description:"available"}),
+              localAssistance: Types.String({description:"localAssistance"}),
+              advisable: Types.String({description:"advisable"}),
             }
           })
+
         }
       })
     },
